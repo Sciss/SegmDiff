@@ -1,7 +1,7 @@
 # Segmentary Differentiation
 
 This repository contains materials, such as sketches, code, or [Mellite](https://sciss.de/mellite) workspaces,
-relating to our sound installation piece [Segmentary Differentiation](https://www.researchcatalogue.net/view/711706/711707)
+relating to our sound installation piece [Through Segments](https://www.researchcatalogue.net/view/711706/711707)
 and its research process.
 
 All materials in this repository (C)opyright 2019&ndash;2020 Hanns Holger Rutz. All rights reserved.
