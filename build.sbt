@@ -12,6 +12,8 @@ lazy val commonSettings = Seq(
 
 lazy val deps = new {
   val fscape          = "2.33.2"
+  val kollflitz       = "0.2.3"
+  val linKernighan    = "0.1.0"
   val lucre           = "3.16.1"
   val soundProcesses  = "3.33.0"
   val topology        = "1.1.2"
@@ -23,6 +25,8 @@ lazy val root = project.in(file("."))
     libraryDependencies ++= Seq(
       "de.sciss" %% "fscape-lucre"                % deps.fscape,
       "de.sciss" %% "fscape-macros"               % deps.fscape,
+      "de.sciss" %% "kollflitz"                   % deps.kollflitz,
+      "de.sciss" %% "linkernighantsp"             % deps.linKernighan,
       "de.sciss" %% "lucre-bdb"                   % deps.lucre,
       "de.sciss" %% "soundprocesses-core"         % deps.soundProcesses,
       "de.sciss" %% "topology"                    % deps.topology,
