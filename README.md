@@ -1,5 +1,9 @@
 # Segmentary Differentiation
 
+[![Build Status](https://travis-ci.org/Sciss/SegmDiff.svg?branch=master)](https://travis-ci.org/Sciss/SegmDiff)
+
+## statement
+
 This repository contains materials, such as sketches, code, or [Mellite](https://sciss.de/mellite) workspaces,
 relating to our sound installation piece [Through Segments](https://www.researchcatalogue.net/view/711706/711707)
 and its research process.
