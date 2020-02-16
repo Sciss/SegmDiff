@@ -43,6 +43,6 @@ object LKTest {
     println(s"Optimization took ${t1-t0}ms.")
 //    val tourOpt = lk.tour
     println(s"Optimized cost: ${lk.tourCost}")
-    println(lk.tour.mkString(" => "))
+    println(lk.tour.mkString(","))  // can be used in mllt: `intvector ...`
   }
 }
