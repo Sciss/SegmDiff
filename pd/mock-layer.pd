@@ -1,4 +1,4 @@
-#N canvas 0 119 1303 950 10;
+#N canvas 638 130 1303 950 10;
 #X text 75 305 minimum rest duration [s]:;
 #X floatatom 327 240 5 1 99 0 - - -;
 #X floatatom 329 277 5 5 120 0 - - -;
@@ -17,12 +17,12 @@
 #X obj 374 241 s iab_frac;
 #X obj 377 274 s iab_ref;
 #X obj 380 307 s iab_rest;
-#X obj 561 206 metro 1000;
-#X obj 561 238 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 618 326 metro 1000;
+#X obj 618 358 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 561 177 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 618 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 561 148 1;
+#X msg 618 268 1;
 #X obj 289 391 * 60;
 #X obj 213 391 / 100;
 #X obj 255 477 *;
@@ -34,10 +34,10 @@
 #X obj 815 89 r iab_ref_s;
 #X floatatom 815 120 5 0 0 0 - - -;
 #X obj 741 91 r iab_step;
-#X obj 561 263 s iab_step;
+#X obj 618 383 s iab_step;
 #X floatatom 776 185 5 0 0 0 - - -;
 #X obj 916 89 vsl 15 128 0.01 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3018 1;
+-1 -1 3888 1;
 #X obj 799 210 /;
 #X floatatom 798 252 5 0 0 0 - - -;
 #X obj 841 384 counter;
@@ -64,7 +64,7 @@
 #X obj 998 659 r iab_bud;
 #X obj 951 764 /;
 #X obj 1083 653 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 9676 1;
+-1 -1 6199 1;
 #X floatatom 951 799 5 0 0 0 - - -;
 #X obj 950 713 -;
 #X floatatom 952 739 5 0 0 0 - - -;
@@ -75,11 +75,11 @@
 #X obj 946 685 t b f;
 #X text 937 133 elapsed;
 #X text 1104 672 budget left;
-#X text 549 92 ———— clock ————;
+#X text 606 212 ———— clock ————;
 #X text 767 56 ———— reference frame ————;
 #X text 826 297 ———— rest frame ————;
 #X text 969 595 ———— remaining budget ————;
-#N canvas 717 121 1223 959 sound 1;
+#N canvas 593 105 1223 959 sound 0;
 #X obj 315 722 dac~;
 #X obj 315 638 *~;
 #X obj 425 630 env~;
@@ -251,7 +251,8 @@
 #X obj 213 396 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 235 397 t b b f b b b;
-#X text 824 59 click here if loop is interrupted by editing;
+#X text 813 68 click here if loop is interrupted by editing, f 19
+;
 #X connect 1 0 2 0;
 #X connect 1 0 13 0;
 #X connect 2 0 5 0;
@@ -408,48 +409,153 @@
 #X connect 153 3 72 0;
 #X connect 153 4 150 0;
 #X connect 153 5 152 0;
-#X restore 507 510 pd sound;
+#X restore 391 55 pd sound;
 #X obj 857 740 s iab_bud_rem;
 #X text 472 30 last modified: 14-Mar-2020 4pm HHR;
-#X obj 290 630 r iab_begin;
-#X obj 379 630 r iab_end;
-#X obj 333 704 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 172 650 r iab_begin;
+#X obj 261 650 r iab_end;
+#X obj 215 724 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 70 9 loadbang;
 #X obj 70 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 70 63 s init;
 #X obj 194 127 r init;
-#X obj 560 116 r init;
+#X obj 617 236 r init;
 #X msg 248 240 set \$1;
 #X msg 245 274 set \$1;
 #X msg 244 303 set \$1;
-#X obj 243 664 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 125 684 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 421 667 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 303 687 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 291 665 0;
-#X msg 371 666 1;
-#N canvas 756 292 450 392 README 0;
+#X msg 173 685 0;
+#X msg 253 686 1;
+#N canvas 726 268 450 392 README 0;
 #X text 57 169 required libraries to load on startup: cyclone;
-#X text 55 113 required externals: cyclone (0.3) \, else \, osc these
-have to be added to path preferences;
 #X text 61 66 written with pd 0.49.0;
 #X text 61 29 ———— technical info ————;
 #X text 54 235 ———— notes ————;
 #X text 53 272 currently implements only IAB \, not yet CL;
+#X text 55 113 required externals: cyclone (0.3) \, else \, osc \,
+iemnet. these have to be added to path preferences;
 #X restore 393 28 pd README;
-#X obj 557 550 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 561 516 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 519 550 0;
 #X obj 472 550 r init;
-#X text 583 550 mute sound;
+#X text 603 521 mute sound;
 #X msg 523 575 set \$1;
 #X obj 583 577 s snd_mute;
-#X text 568 510 sends: iab_act \, iab_begin \, iab_end;
-#X text 374 711 active?;
-#X text 276 598 ———— communicate status ————;
-#X text 324 761 TODO: send out via OSC;
+#X text 452 55 sends: iab_act \, iab_begin \, iab_end;
+#X text 256 731 active?;
+#X text 158 618 ———— communicate status ————;
+#N canvas 291 235 1246 735 open-sound-control 1;
+#X obj 205 313 udpsend;
+#X msg 161 146 set \$1;
+#X floatatom 255 146 6 0 0 0 - - -;
+#X msg 211 146 57120;
+#X text 301 145 OSC UDP port of your client;
+#X msg 108 228 connect;
+#X obj 197 90 r init;
+#X msg 255 211 127.0.0.1 \$1;
+#X obj 222 213 t b;
+#X obj 270 240 prepend connect;
+#X obj 222 240 list;
+#X msg 108 251 disconnect;
+#X obj 205 341 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 159 123 set \$1;
+#X floatatom 257 124 6 0 0 0 - - -;
+#X msg 209 123 1;
+#X text 299 122 Identifier of this mock layer;
+#X obj 251 98 s lay_id;
+#X obj 716 24 r osc_out;
+#X obj 679 205 zl len;
+#X obj 677 283 print osc-out ERROR: empty message;
+#X obj 682 139 list;
+#X obj 659 348 r lay_id;
+#X obj 617 407 zl join;
+#X obj 650 313 gate 2;
+#X obj 680 165 t l l;
+#X obj 669 240 min 2;
+#X obj 729 247 select 0;
+#X msg 659 376 list i \$1;
+#X obj 697 584 prepend sendtyped;
+#X msg 760 68 /foo;
+#X obj 797 322 zl slice 1;
+#X msg 943 426 set \$1;
+#X obj 898 465 prepend;
+#X obj 941 397 r lay_id;
+#X obj 899 349 zl slice 1;
+#X text 870 317 cmd and args;
+#X text 986 348 type-tags and args;
+#X obj 807 521 zl join;
+#X obj 852 379 sprintf i%s;
+#X obj 819 479 zl join;
+#X msg 761 101 /bar f 33.3;
+#X obj 851 598 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 820 632 spigot;
+#X obj 821 671 print OSC_OUT;
+#X text 878 595 debug print outgoing messages;
+#X obj 732 647 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 695 611 t a a b;
+#X obj 270 313 packOSC;
+#X text 128 341 connected?;
+#X connect 0 0 12 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 3 0;
+#X connect 6 0 15 0;
+#X connect 7 0 10 1;
+#X connect 8 0 10 0;
+#X connect 9 0 0 0;
+#X connect 10 0 9 0;
+#X connect 11 0 0 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 0;
+#X connect 18 0 21 0;
+#X connect 19 0 27 0;
+#X connect 19 0 26 0;
+#X connect 21 0 25 0;
+#X connect 22 0 28 0;
+#X connect 23 0 29 0;
+#X connect 24 0 23 0;
+#X connect 24 1 31 0;
+#X connect 25 0 24 1;
+#X connect 25 1 19 0;
+#X connect 26 0 24 0;
+#X connect 27 0 20 0;
+#X connect 28 0 23 1;
+#X connect 29 0 47 0;
+#X connect 30 0 21 0;
+#X connect 31 0 38 0;
+#X connect 31 1 35 0;
+#X connect 32 0 33 0;
+#X connect 33 0 40 1;
+#X connect 34 0 32 0;
+#X connect 35 0 39 0;
+#X connect 35 1 33 0;
+#X connect 38 0 29 0;
+#X connect 39 0 40 0;
+#X connect 40 0 38 1;
+#X connect 41 0 21 0;
+#X connect 42 0 43 1;
+#X connect 43 0 44 0;
+#X connect 47 0 48 0;
+#X connect 47 1 43 0;
+#X connect 47 2 46 0;
+#X connect 48 0 0 0;
+#X restore 391 84 pd open-sound-control;
+#X msg 22 679 \; osc_out /begin-iab, f 13;
+#X msg 332 673 \; osc_out /end-iab;
 #X connect 1 0 14 0;
 #X connect 1 0 83 0;
 #X connect 2 0 15 0;
@@ -529,6 +635,8 @@ have to be added to path preferences;
 #X connect 83 0 7 0;
 #X connect 84 0 10 0;
 #X connect 85 0 13 0;
+#X connect 86 0 101 0;
+#X connect 87 0 102 0;
 #X connect 88 0 77 0;
 #X connect 89 0 77 0;
 #X connect 91 0 95 0;
