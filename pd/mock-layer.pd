@@ -1,4 +1,4 @@
-#N canvas 638 130 1303 950 10;
+#N canvas 373 96 1303 950 10;
 #X text 75 305 minimum rest duration [s]:;
 #X floatatom 327 240 5 1 99 0 - - -;
 #X floatatom 329 277 5 5 120 0 - - -;
@@ -37,7 +37,7 @@
 #X obj 618 383 s iab_step;
 #X floatatom 776 185 5 0 0 0 - - -;
 #X obj 916 89 vsl 15 128 0.01 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3888 1;
+-1 -1 6225 1;
 #X obj 799 210 /;
 #X floatatom 798 252 5 0 0 0 - - -;
 #X obj 841 384 counter;
@@ -54,7 +54,7 @@
 #X obj 953 659 accum;
 #X obj 297 508 s iab_bud;
 #X obj 1015 490 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 1016 392 r iab_act;
 #X obj 953 553 *;
 #X obj 1000 518 f;
@@ -64,7 +64,7 @@
 #X obj 998 659 r iab_bud;
 #X obj 951 764 /;
 #X obj 1083 653 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6199 1;
+-1 -1 3629 1;
 #X floatatom 951 799 5 0 0 0 - - -;
 #X obj 950 713 -;
 #X floatatom 952 739 5 0 0 0 - - -;
@@ -79,7 +79,7 @@
 #X text 767 56 ———— reference frame ————;
 #X text 826 297 ———— rest frame ————;
 #X text 969 595 ———— remaining budget ————;
-#N canvas 593 105 1223 959 sound 0;
+#N canvas 573 96 1223 959 sound 0;
 #X obj 315 722 dac~;
 #X obj 315 638 *~;
 #X obj 425 630 env~;
@@ -87,7 +87,7 @@
 #X obj 154 605 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 2200 1;
 #X obj 423 657 - 100;
-#X obj 422 749 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 422 749 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 479 713 below -60 dBFS is "silent";
 #X obj 422 713 > -60;
@@ -129,9 +129,9 @@
 #X obj 644 450 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom 288 152 5 1 99 0 - - -;
-#X floatatom 289 185 5 5 120 0 - - -;
+#X floatatom 290 183 5 5 120 0 - - -;
 #X msg 254 153 1;
-#X msg 255 182 5;
+#X msg 255 182 6;
 #X text 17 157 minimum offset duration [s]:;
 #X text 16 189 maximum offset duration [s]:;
 #X obj 338 150 s snd_min_off;
@@ -185,7 +185,7 @@
 #X floatatom 289 217 5 1 400 0 - - -;
 #X floatatom 290 250 5 5 400 0 - - -;
 #X msg 252 217 20;
-#X msg 250 250 60;
+#X msg 250 250 75;
 #X text 13 58 ———— Sound Timing ————;
 #X obj 338 217 s snd_min_pause;
 #X obj 336 253 s snd_max_pause;
@@ -198,7 +198,7 @@
 #X msg 203 182 set \$1;
 #X msg 200 217 set \$1;
 #X floatatom 301 285 5 5 400 0 - - -;
-#X msg 253 287 5;
+#X msg 253 287 8;
 #X msg 204 287 set \$1;
 #X obj 341 284 s snd_pause_prob;
 #X text 49 289 pause probability [%]:;
@@ -414,7 +414,7 @@
 #X text 472 30 last modified: 14-Mar-2020 4pm HHR;
 #X obj 172 650 r iab_begin;
 #X obj 261 650 r iab_end;
-#X obj 215 724 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 215 724 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 70 9 loadbang;
 #X obj 70 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -450,7 +450,7 @@ iemnet. these have to be added to path preferences;
 #X text 452 55 sends: iab_act \, iab_begin \, iab_end;
 #X text 256 731 active?;
 #X text 158 618 ———— communicate status ————;
-#N canvas 291 235 1246 735 open-sound-control 1;
+#N canvas 118 205 1246 735 open-sound-control 0;
 #X obj 205 313 udpsend;
 #X msg 161 146 set \$1;
 #X floatatom 255 146 6 0 0 0 - - -;
